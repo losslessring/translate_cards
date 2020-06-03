@@ -1,0 +1,83 @@
+html, body{
+ margin: 0;
+}
+
+.items{
+    display: flex;
+}
+
+.item{
+    width: 200px; 
+    height: 200px; 
+    background: #eee; 
+    margin: 20px; 
+    box-sizing: border-box;
+}
+
+.item-active{
+border: 1px solid red;
+}
+
+/* .slider-wrap {
+    width: 260px;
+    height: 335px;
+    margin-left: 260px;
+    overflow: hidden;
+}
+
+.slider {
+    width: calc(260px*5);
+    height: 100%;
+    margin-left: -520px;
+} */
+
+.card {
+    margin: 30px;
+    width: 200px;
+    height: 275px;
+    float: left;
+    position: relative;
+    user-select: none; /*отменяем выделение текста*/
+    cursor: pointer;
+    perspective: 600px;
+    transition: .5s;
+    background-color: whitesmoke;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.card-picture {
+    margin: auto;
+    margin-top: 12%;
+    margin-bottom: 5%;
+}
+
+.slick-slider { 
+    width: 200px; 
+    margin-left: 50px;
+}
+
+.original-word {
+    font-size: 24px;
+    font-family: serif;
+    text-transform: uppercase;
+    padding: 5px;
+}
+.translate-word {
+    font-size: 20px;
+    font-family: serif;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+.check-mark {
+    font-size: 32px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: rgb(12, 129, 61);
+    display: none;
+}
+.active {
+    display: block;
+}
