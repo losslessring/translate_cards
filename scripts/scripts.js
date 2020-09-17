@@ -43,7 +43,27 @@ window.onload = function () {
   			})
 	}
 
+	const translate = (text) => {
+		const url = `https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?mt=1&onlyprivate=0&langpair=en%7Cru&q=`
+	  	const key = "30e8ae266cmsh562552162a826eep10a539jsn9e15c61f42d3"
 
+
+		return fetch(`${url}${text}`, {
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-host": "translated-mymemory---translation-memory.p.rapidapi.com",
+				"x-rapidapi-key": key
+			}
+		})
+		.then(function(response) {				
+		    return response.json()
+		}).then(function(json) {  				 
+		 	return json.responseData.translatedText   				 
+		}).catch(function(ex) {
+			console.log('parsing failed', ex)
+		})
+
+	}
 
 	
 
@@ -75,7 +95,7 @@ window.onload = function () {
 		//Запрос накартинку
 		//Добавляем карточку с переводом и картинкой
 		uniqueWordArray.forEach(word => {
-			yandexTranslate(word).then((translate) => {
+			translate(word).then((translate) => {
 				getImage(word).then((url) => {
 					console.log(word + ' '+ translate + ' ' + url)
 					$('.slider-wrap').slick('slickAdd', `
